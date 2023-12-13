@@ -10,6 +10,7 @@ class Movie < ActiveRecord::Base
         where(rating: ratings.map(&:upcase)).order sort_by
       end
     end
-  
+    
+    
+
 end
-  

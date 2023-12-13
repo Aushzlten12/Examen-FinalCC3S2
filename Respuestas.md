@@ -115,6 +115,9 @@ Configuramos todo correctamente
   Agregamos un boton que nos lleve a buscar la pelicula
   ![](Part2-form.png)
   Ahora podemos ver el formulario para buscar la pelicula
-
+  Creamos las pruebas en spec/controller, ejecutamos las pruebas con `bundle exec rspec`
+  ![](rspec1.png)
+  Eso seria todo el primer paso  
 - Paso 2
+  
 -
