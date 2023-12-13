@@ -8,7 +8,7 @@ class MoviesController < ApplicationController
     end
 
     def search_tmdb
-      search_terms = params[:name]
+      params[:search_terms] = 'hardware'
     end
 
     def index

@@ -35,7 +35,7 @@ validate :username_format
 end
 ```
 
-![imagen2](2.png) 
+![imagen2](2.png)
 
 3. Recuerda, los filtros nos ayudan a verificar si ciertas condiciones se cumplen antes de permitir que se ejecute una acción del controlador. Para el modelo de User, digamos que queremos verificar si @user era administrador de todos los métodos en AdminController. Completa el método before_filter:check_admin a continuación que verifica si el campo de administrador en @user es verdadero. De lo contrario, redirija a la página admin_login con un mensaje que indica acceso restringido.
 
@@ -100,6 +100,7 @@ testEval();
 
 console.log("Despues de la magia de eval:", blog);
 ```
+
 ![](eval.png)
 
 Vemos que blog cambia despues de usar eval se genero un campo adicional en blog
@@ -117,7 +118,24 @@ Configuramos todo correctamente
   Ahora podemos ver el formulario para buscar la pelicula
   Creamos las pruebas en spec/controller, ejecutamos las pruebas con `bundle exec rspec`
   ![](rspec1.png)
-  Eso seria todo el primer paso  
+  Eso seria todo el primer paso
 - Paso 2
+  Primeo agregamos a las pruebas
+  ```ruby
+  require 'rails_helper'
+  describe MoviesController,:type => :controller do
+  describe 'searching TMDb' do
+  it 'calls the model method that performs TMDb search' do
+  get :search_tmdb, {:search_terms => 'hardware'}
+  end
+  it 'selects the Search Results template for rendering'
+  it 'makes the TMDb search results available to that template'
+  end
+  end
+  ```
+
+  Se agrego a `it 'calls the model method that performs TMDb search'` un metodo get para que ese metodo get funcione se le agrega a describe `:type=>:controller`
+
+  ![](part2fail.png)
+
   
--
